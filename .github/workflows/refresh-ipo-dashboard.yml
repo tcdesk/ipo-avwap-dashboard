@@ -1,68 +1,31 @@
 name: Refresh IPO AVWAP Dashboard
-
 on:
   schedule:
-    - cron: '55 19 * * 1-5'
+    - cron: "55 19 * * 1-5"
   workflow_dispatch:
-
 permissions:
   contents: write
   pages: write
   id-token: write
-
 concurrency:
   group: ipo-dashboard-deploy
   cancel-in-progress: true
-
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Install dependencies
+      - uses: actions/checkout@v4
+      - name: Prepare site
         run: |
-          python -m pip install --upgrade pip
-          pip install pandas requests yfinance lxml html5lib
-
-      - name: Run collector
-        run: python build_ipo_dashboard_data.py
-
-      - name: Prepare Pages directory
-        run: |
-          mkdir -p site
+          mkdir site
           cp ipo-avwap-dashboard-final.html site/index.html
           cp ipos-live.json site/ipos-live.json
           cp ipos-live.csv site/ipos-live.csv
           cp tradingview-watchlist.txt site/tradingview-watchlist.txt
-          cp README-dashboard-package.txt site/README-dashboard-package.txt
-
-      - name: Commit refreshed files
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add ipo-avwap-dashboard-final.html ipos-live.json ipos-live.csv tradingview-watchlist.txt README-dashboard-package.txt
-          git diff --staged --quiet || git commit -m "Daily IPO dashboard refresh"
-          git push
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4
