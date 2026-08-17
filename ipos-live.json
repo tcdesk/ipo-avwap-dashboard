@@ -1,0 +1,70 @@
+{
+  "generatedAt": "2026-08-16 17:23 UTC",
+  "rows": [
+    {
+      "ticker": "SCTX",
+      "company": "Scribe Therapeutics",
+      "exchange": "NASDAQ",
+      "ipoDate": "2026-08-14",
+      "currentPrice": 20.73,
+      "ipoAvwap": 20.45,
+      "status": "Above",
+      "distancePct": 1.36,
+      "tvSymbol": "NASDAQ:SCTX",
+      "historyRows": 1,
+      "dataMode": "live"
+    },
+    {
+      "ticker": "IOND",
+      "company": "Ionic Digital",
+      "exchange": "NASDAQ",
+      "ipoDate": "2026-08-12",
+      "currentPrice": 65.15,
+      "ipoAvwap": 63.54,
+      "status": "Above",
+      "distancePct": 2.54,
+      "tvSymbol": "NASDAQ:IOND",
+      "historyRows": 3,
+      "dataMode": "live"
+    },
+    {
+      "ticker": "LTGO",
+      "company": "Latigo Biotherapeutics",
+      "exchange": "NASDAQ",
+      "ipoDate": "2026-08-06",
+      "currentPrice": 19.49,
+      "ipoAvwap": 19.67,
+      "status": "Below",
+      "distancePct": -0.92,
+      "tvSymbol": "NASDAQ:LTGO",
+      "historyRows": 5,
+      "dataMode": "live"
+    },
+    {
+      "ticker": "BHRT",
+      "company": "Braveheart Bio Inc",
+      "exchange": "NASDAQ",
+      "ipoDate": "2026-08-05",
+      "currentPrice": 14.06,
+      "ipoAvwap": 15.21,
+      "status": "Below",
+      "distancePct": -7.56,
+      "tvSymbol": "NASDAQ:BHRT",
+      "historyRows": null,
+      "dataMode": "placeholder"
+    },
+    {
+      "ticker": "JMKE",
+      "company": "Jersey Mike's Subs Inc",
+      "exchange": "NYSE",
+      "ipoDate": "2026-07-29",
+      "currentPrice": 22.16,
+      "ipoAvwap": 22.32,
+      "status": "Below",
+      "distancePct": -0.71,
+      "tvSymbol": "NYSE:JMKE",
+      "historyRows": 12,
+      "dataMode": "live"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+ticker,company,exchange,ipoDate,currentPrice,ipoAvwap,status,distancePct,tvSymbol,historyRows,dataMode
+SCTX,Scribe Therapeutics,NASDAQ,2026-08-14,20.73,20.45,Above,1.36,NASDAQ:SCTX,1.0,live
+IOND,Ionic Digital,NASDAQ,2026-08-12,65.15,63.54,Above,2.54,NASDAQ:IOND,3.0,live
+LTGO,Latigo Biotherapeutics,NASDAQ,2026-08-06,19.49,19.67,Below,-0.92,NASDAQ:LTGO,5.0,live
+BHRT,Braveheart Bio Inc,NASDAQ,2026-08-05,14.06,15.21,Below,-7.56,NASDAQ:BHRT,,placeholder
+JMKE,Jersey Mike's Subs Inc,NYSE,2026-07-29,22.16,22.32,Below,-0.71,NYSE:JMKE,12.0,live
