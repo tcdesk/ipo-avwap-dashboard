@@ -1,6 +1,6 @@
-ticker,company,exchange,ipoDate,currentPrice,ipoAvwap,status,distancePct,tvSymbol,historyRows,dataMode
-SCTX,Scribe Therapeutics,NASDAQ,2026-08-14,20.73,20.45,Above,1.36,NASDAQ:SCTX,1.0,live
-IOND,Ionic Digital,NASDAQ,2026-08-12,65.15,63.54,Above,2.54,NASDAQ:IOND,3.0,live
-LTGO,Latigo Biotherapeutics,NASDAQ,2026-08-06,19.49,19.67,Below,-0.92,NASDAQ:LTGO,5.0,live
-BHRT,Braveheart Bio Inc,NASDAQ,2026-08-05,14.06,15.21,Below,-7.56,NASDAQ:BHRT,,placeholder
-JMKE,Jersey Mike's Subs Inc,NYSE,2026-07-29,22.16,22.32,Below,-0.71,NYSE:JMKE,12.0,live
+ticker,company,exchange,ipoDate,currentPrice,ipoAvwap,status,distancePct,tvSymbol,historyRows,dataMode,sector,industry,niche,description,catalyst
+SCTX,Scribe Therapeutics,NASDAQ,2026-08-14,20.73,20.45,Above,1.36,NASDAQ:SCTX,1,live,Healthcare,Biotechnology,Gene editing therapeutics,Develops programmable gene-editing medicines intended to treat serious genetic diseases.,"Pipeline updates, clinical progress, and strategic partnerships."
+IOND,Ionic Digital,NASDAQ,2026-08-12,65.15,63.54,Above,2.54,NASDAQ:IOND,3,live,Information Technology,Digital Infrastructure / Data Centers,AI/HPC capacity leasing with Bitcoin mining,Owns powered Texas data-center sites and is shifting from Bitcoin mining toward leasing capacity for AI and high-performance-computing customers.,AI/HPC lease execution and expansion of powered capacity.
+LTGO,Latigo Biotherapeutics,NASDAQ,2026-08-06,19.49,19.67,Below,-0.92,NASDAQ:LTGO,5,live,Healthcare,Biotechnology,Non-opioid pain therapeutics,Develops non-opioid medicines designed to treat pain through targeted ion-channel approaches.,Clinical trial readouts and pipeline advancement.
+BHRT,Braveheart Bio Inc,NASDAQ,2026-08-05,14.06,15.21,Below,-7.56,NASDAQ:BHRT,,placeholder,Healthcare,Biotechnology,Cardiovascular-focused biopharma,Biotechnology company focused on developing therapies for cardiovascular disease.,"Clinical, regulatory, and financing updates."
+JMKE,Jersey Mike's Subs Inc,NYSE,2026-07-29,22.16,22.32,Below,-0.71,NYSE:JMKE,12,live,Consumer Discretionary,Restaurants,Fast-casual sandwich franchising,Operates and franchises a fast-casual sandwich restaurant brand with an emphasis on unit expansion and same-store sales.,"Comparable-sales trends, new-unit growth, and margin performance."

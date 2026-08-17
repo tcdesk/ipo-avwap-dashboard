@@ -1,0 +1,31 @@
+name: Refresh IPO AVWAP Dashboard
+on:
+  schedule:
+    - cron: "55 19 * * 1-5"
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: ipo-dashboard-deploy
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare site
+        run: |
+          mkdir site
+          cp ipo-avwap-dashboard-final.html site/index.html
+          cp ipos-live.json site/ipos-live.json
+          cp ipos-live.csv site/ipos-live.csv
+          cp tradingview-watchlist.txt site/tradingview-watchlist.txt
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

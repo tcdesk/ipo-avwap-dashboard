@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16 17:23 UTC",
+  "generatedAt": "2026-08-17 10:43 UTC",
   "rows": [
     {
       "ticker": "SCTX",
@@ -12,7 +12,12 @@
       "distancePct": 1.36,
       "tvSymbol": "NASDAQ:SCTX",
       "historyRows": 1,
-      "dataMode": "live"
+      "dataMode": "live",
+      "sector": "Healthcare",
+      "industry": "Biotechnology",
+      "niche": "Gene editing therapeutics",
+      "description": "Develops programmable gene-editing medicines intended to treat serious genetic diseases.",
+      "catalyst": "Pipeline updates, clinical progress, and strategic partnerships."
     },
     {
       "ticker": "IOND",
@@ -25,7 +30,12 @@
       "distancePct": 2.54,
       "tvSymbol": "NASDAQ:IOND",
       "historyRows": 3,
-      "dataMode": "live"
+      "dataMode": "live",
+      "sector": "Information Technology",
+      "industry": "Digital Infrastructure / Data Centers",
+      "niche": "AI/HPC capacity leasing with Bitcoin mining",
+      "description": "Owns powered Texas data-center sites and is shifting from Bitcoin mining toward leasing capacity for AI and high-performance-computing customers.",
+      "catalyst": "AI/HPC lease execution and expansion of powered capacity."
     },
     {
       "ticker": "LTGO",
@@ -38,7 +48,12 @@
       "distancePct": -0.92,
       "tvSymbol": "NASDAQ:LTGO",
       "historyRows": 5,
-      "dataMode": "live"
+      "dataMode": "live",
+      "sector": "Healthcare",
+      "industry": "Biotechnology",
+      "niche": "Non-opioid pain therapeutics",
+      "description": "Develops non-opioid medicines designed to treat pain through targeted ion-channel approaches.",
+      "catalyst": "Clinical trial readouts and pipeline advancement."
     },
     {
       "ticker": "BHRT",
@@ -51,7 +66,12 @@
       "distancePct": -7.56,
       "tvSymbol": "NASDAQ:BHRT",
       "historyRows": null,
-      "dataMode": "placeholder"
+      "dataMode": "placeholder",
+      "sector": "Healthcare",
+      "industry": "Biotechnology",
+      "niche": "Cardiovascular-focused biopharma",
+      "description": "Biotechnology company focused on developing therapies for cardiovascular disease.",
+      "catalyst": "Clinical, regulatory, and financing updates."
     },
     {
       "ticker": "JMKE",
@@ -64,7 +84,12 @@
       "distancePct": -0.71,
       "tvSymbol": "NYSE:JMKE",
       "historyRows": 12,
-      "dataMode": "live"
+      "dataMode": "live",
+      "sector": "Consumer Discretionary",
+      "industry": "Restaurants",
+      "niche": "Fast-casual sandwich franchising",
+      "description": "Operates and franchises a fast-casual sandwich restaurant brand with an emphasis on unit expansion and same-store sales.",
+      "catalyst": "Comparable-sales trends, new-unit growth, and margin performance."
     }
   ]
 }
