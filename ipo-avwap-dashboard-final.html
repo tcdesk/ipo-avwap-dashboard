@@ -30,6 +30,23 @@ status = current close >= avwap ? Above : Below</div></article></aside></section
   <script>
     const embedded = [{"ticker": "SCTX", "company": "Scribe Therapeutics", "exchange": "NASDAQ", "ipoDate": "2026-08-14", "currentPrice": 20.73, "ipoAvwap": 20.45, "status": "Above", "distancePct": 1.36, "tvSymbol": "NASDAQ:SCTX", "historyRows": 1, "dataMode": "live"}, {"ticker": "IOND", "company": "Ionic Digital", "exchange": "NASDAQ", "ipoDate": "2026-08-12", "currentPrice": 65.15, "ipoAvwap": 63.54, "status": "Above", "distancePct": 2.54, "tvSymbol": "NASDAQ:IOND", "historyRows": 3, "dataMode": "live"}, {"ticker": "LTGO", "company": "Latigo Biotherapeutics", "exchange": "NASDAQ", "ipoDate": "2026-08-06", "currentPrice": 19.49, "ipoAvwap": 19.67, "status": "Below", "distancePct": -0.92, "tvSymbol": "NASDAQ:LTGO", "historyRows": 5, "dataMode": "live"}, {"ticker": "BHRT", "company": "Braveheart Bio Inc", "exchange": "NASDAQ", "ipoDate": "2026-08-05", "currentPrice": 14.06, "ipoAvwap": 15.21, "status": "Below", "distancePct": -7.56, "tvSymbol": "NASDAQ:BHRT", "historyRows": null, "dataMode": "placeholder"}, {"ticker": "JMKE", "company": "Jersey Mike's Subs Inc", "exchange": "NYSE", "ipoDate": "2026-07-29", "currentPrice": 22.16, "ipoAvwap": 22.32, "status": "Below", "distancePct": -0.71, "tvSymbol": "NYSE:JMKE", "historyRows": 12, "dataMode": "live"}];
     let rows = [...embedded]; let sortKey = 'ipoDate'; let sortDir = 'desc';
+async function loadLiveRows() {
+  try {
+    const response = await fetch('./ipos-live.json', { cache: 'no-store' });
+    if (!response.ok) throw new Error('Dataset request failed');
+    const payload = await response.json();
+    if (Array.isArray(payload.rows) && payload.rows.length) {
+      rows = payload.rows;
+      const stamp = payload.generatedAt ? 'Generated ' + payload.generatedAt : 'Live JSON loaded';
+      document.getElementById('refreshChip').textContent = stamp;
+    } else {
+      throw new Error('Dataset contains no rows');
+    }
+  } catch (error) {
+    document.getElementById('refreshChip').textContent = rows.length ? 'Embedded fallback data' : 'No data available';
+  }
+  render();
+}
     const tbody = document.getElementById('tbody'), watchlistBox = document.getElementById('watchlistBox');
     const searchInput = document.getElementById('searchInput'), exchangeFilter = document.getElementById('exchangeFilter'), statusFilter = document.getElementById('statusFilter'), modeFilter = document.getElementById('modeFilter');
     function formatNum(v) { return v == null ? '—' : Number(v).toFixed(2); }
@@ -43,7 +60,7 @@ status = current close >= avwap ? Above : Below</div></article></aside></section
     document.getElementById('copyTv').addEventListener('click', async () => { try { await navigator.clipboard.writeText(watchlistBox.textContent); } catch(e) {} });
     document.getElementById('exportCsv').addEventListener('click', () => { const filtered = sortRows(getFiltered()); const headers = ['ticker','company','exchange','ipoDate','currentPrice','ipoAvwap','status','distancePct','tvSymbol','dataMode']; const lines = [headers.join(',')].concat(filtered.map(r => headers.map(h => JSON.stringify(r[h])).join(','))); const blob = new Blob([lines.join('
 ')], {type:'text/csv'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'ipo-avwap-dashboard.csv'; a.click(); URL.revokeObjectURL(a.href); });
-    render();
+loadLiveRows();
   </script>
 </body>
 </html>
