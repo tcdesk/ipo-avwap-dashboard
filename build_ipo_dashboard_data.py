@@ -140,7 +140,14 @@ def write_outputs(rows):
         w.writerows(rows)
     (ROOT/'tradingview-watchlist.txt').write_text('\n'.join(r['tvSymbol'] for r in rows) + ('\n' if rows else ''))
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     rows = build_rows()
+
+    if not rows:
+        raise RuntimeError(
+            "Safety stop: collector produced zero valid IPO rows. "
+            "Existing dashboard files were not overwritten."
+        )
+
     write_outputs(rows)
-    print(f'Wrote {len(rows)} rows from {START_DATE.isoformat()} through {date.today().isoformat()}')
+    print(f"Wrote {len(rows)} IPO rows.")
